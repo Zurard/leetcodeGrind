@@ -9,25 +9,29 @@ class Solution:
         if not root :
             return 0 
         
-        count = 0
+        return 1 + self.countNodes(root.left) + self.countNodes(root.right)
 
-        def bfs(root): 
-            from collections import deque
-            q = deque()
-            q.append(root)        
 
-            nonlocal count
-            while q:
-                size = len(q)
-                while size > 0  : 
-                    node = q.popleft()
-                    count += 1
-                    if node.left :
-                        q.append(node.left)
-                    if node.right:
-                        q.append(node.right)
+        # this is iterative method
 
-                    size -= 1
+        # count = 0 
+        # def bfs(root): 
+        #     from collections import deque
+        #     q = deque()
+        #     q.append(root)        
 
-        bfs(root)
-        return count 
+        #     nonlocal count
+        #     while q:
+        #         size = len(q)
+        #         while size > 0  : 
+        #             node = q.popleft()
+        #             count += 1
+        #             if node.left :
+        #                 q.append(node.left)
+        #             if node.right:
+        #                 q.append(node.right)
+
+        #             size -= 1
+
+        # bfs(root)
+        # return count 
