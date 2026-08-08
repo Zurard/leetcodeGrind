@@ -17,7 +17,7 @@ class Solution(object):
 
 
         mat = [[0]*c for _ in range(r)]
-        print(mat)
+        # print(mat)
 
         x,y = 0 , 0 
         for num in order:
@@ -26,5 +26,5 @@ class Solution(object):
                 x+=1
             mat[x][y] = num        
             y+=1
-        print(mat)
+        # print(mat)
         return mat
