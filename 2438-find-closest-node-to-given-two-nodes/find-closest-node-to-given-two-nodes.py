@@ -1,10 +1,12 @@
 class Solution:
     def closestMeetingNode(self, edges: List[int], node1: int, node2: int) -> int:
         n = len(edges)
-        dist1 = [-1] * n
+        dist1 = [-1] * n 
+        dist2 = [-1] * n
+
         dist1[node1] = 0  
-        dist2 = [-1] * n 
         dist2[node2] = 0 
+        
         def dfs(u , currDistance ,arrDistance ):
             v = edges[u]
             if v == -1 or arrDistance[v] != -1 :
@@ -17,9 +19,6 @@ class Solution:
         dfs(node1, 0 , dist1)
         dfs(node2, 0 , dist2)
         
-        # print(dist1)
-        # print(dist2)
-
         ans = - 1 
         best= float("inf") 
 
